@@ -77,7 +77,7 @@ public class PipeGameManager : MonoBehaviour
 
     void Update()
     {
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_IOS
         switch (Input.touchCount)
         {
             case 1:
