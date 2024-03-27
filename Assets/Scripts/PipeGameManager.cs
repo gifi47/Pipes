@@ -312,10 +312,10 @@ public class PipeGameManager : MonoBehaviour
                 return GetColor(LiquidType.Oil) * 0.5f + GetColor(LiquidType.Water) * 0.5f;
 
             case LiquidType.WaterGas:
-                return GetColor(LiquidType.Gas) * 0.5f + GetColor(LiquidType.Water) * 0.5f;
+                return new Color(0.5234f, 0.8476f, 0.3828f);
 
             case LiquidType.OilGas:
-                return GetColor(LiquidType.Oil) * 0.5f + GetColor(LiquidType.Gas) * 0.5f;
+                return new Color(0.89f, 0.59f, 0f);
 
             case LiquidType.WaterOilGas:
                 return GetColor(LiquidType.Oil) * 0.33f + GetColor(LiquidType.Water) * 0.33f + GetColor(LiquidType.Gas) * 0.33f;

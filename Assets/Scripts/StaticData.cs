@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -6,8 +7,8 @@ using UnityEngine;
 
 public static class StaticData
 {
-    public static string fileSavePath = Application.persistentDataPath + "save1.dat";
-    public static string fileSettingsPath = Application.persistentDataPath + "settings.dat";
+    public static string fileSavePath = Application.persistentDataPath + "/save1.dat";
+    public static string fileSettingsPath = Application.persistentDataPath + "/settings.dat";
 
     public static DataStruct data;
 
@@ -32,7 +33,7 @@ public static class StaticData
         catch (FileNotFoundException)
         {
             file?.Close();
-            CreateSaveFile();
+            if (!CreateSaveFile()) { return; }
             file = new FileStream(fileSavePath, FileMode.Open);
         }
         
@@ -41,25 +42,50 @@ public static class StaticData
         file.Close();
     }
 
-    public static void SaveData()
+    public static bool SaveData()
     {
-        FileStream file = new FileStream(fileSavePath, FileMode.OpenOrCreate);
-        BinaryFormatter bf = new BinaryFormatter();
-        bf.Serialize(file, data);
-        file.Close();
+        try
+        {
+            FileStream file = new FileStream(fileSavePath, FileMode.OpenOrCreate);
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(file, data);
+            file.Close();
+            return true;
+        }
+        catch (Exception)
+        {
+            return false;
+        }
     }
 
-    public static void CreateSaveFile()
+    public static bool CreateSaveFile()
     {
-        FileStream file = new FileStream(fileSavePath, FileMode.CreateNew);
-        BinaryFormatter bf = new BinaryFormatter();
-        bf.Serialize(file, new DataStruct() { isTutorialComplete=false, levelsScore = new int[] { 0, 0, 0, 0, 0, 0 } });
-        file.Close();
+        try
+        {
+            FileStream file = new FileStream(fileSavePath, FileMode.CreateNew);
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(file, new DataStruct() { isTutorialComplete = false, levelsScore = new int[] { 0, 0, 0, 0, 0, 0 } });
+            file.Close();
+            return true;
+        }
+        catch (Exception)
+        {
+            data = new DataStruct() { isTutorialComplete = false, levelsScore = new int[] { 0, 0, 0, 0, 0, 0 } };
+            return false;
+        }
     }
 
-    public static void DeleteSaveFile()
+    public static bool DeleteSaveFile()
     {
-        File.Delete(fileSavePath);
+        try
+        {
+            File.Delete(fileSavePath);
+            return true;
+        }
+        catch (Exception) 
+        {
+            return false;
+        }
     }
 
     public static void LoadSettings()
@@ -72,7 +98,7 @@ public static class StaticData
         catch (FileNotFoundException)
         {
             file?.Close();
-            CreateSettingsFile();
+            if (!CreateSettingsFile()) { return; }
             file = new FileStream(fileSettingsPath, FileMode.Open);
         }
 
@@ -81,33 +107,65 @@ public static class StaticData
         file.Close();
     }
 
-    public static void SaveSettings()
+    public static bool SaveSettings()
     {
-        FileStream file = new FileStream(fileSettingsPath, FileMode.OpenOrCreate);
-        BinaryFormatter bf = new BinaryFormatter();
-        bf.Serialize(file, settings);
-        file.Close();
-    }
-
-    public static void CreateSettingsFile()
-    {
-        FileStream file = new FileStream(fileSettingsPath, FileMode.CreateNew);
-        BinaryFormatter bf = new BinaryFormatter();
-        bf.Serialize(file, new SettingsStruct()
+        try
         {
-            globalVolume = 0.75f,
-            musicVolume = 0.75f,
-            soundVolume = 0.75f,
-            inputMode = SettingsStruct.InputMode.SingleFinger,
-            camMoveSpeed = 0.18f,
-            camZoomSpeed = 0.18f
-        });
-        file.Close();
+            FileStream file = new FileStream(fileSettingsPath, FileMode.OpenOrCreate);
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(file, settings);
+            file.Close();
+            return true;
+        }
+        catch (Exception)
+        {
+            return false;
+        }
     }
 
-    public static void DeleteSettingsFile()
+    public static bool CreateSettingsFile()
     {
-        File.Delete(fileSettingsPath);
+        try
+        {
+            FileStream file = new FileStream(fileSettingsPath, FileMode.CreateNew);
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(file, new SettingsStruct()
+            {
+                globalVolume = 0.75f,
+                musicVolume = 0.6f,
+                soundVolume = 0.75f,
+                inputMode = SettingsStruct.InputMode.SingleFinger,
+                camMoveSpeed = 0.17f,
+                camZoomSpeed = 0.17f
+            });
+            file.Close();
+            return true;
+        } catch (Exception)
+        {
+            settings = new SettingsStruct()
+            {
+                globalVolume = 0.75f,
+                musicVolume = 0.6f,
+                soundVolume = 0.75f,
+                inputMode = SettingsStruct.InputMode.SingleFinger,
+                camMoveSpeed = 0.17f,
+                camZoomSpeed = 0.17f
+            };
+            return false;
+        }
+    }
+
+    public static bool DeleteSettingsFile()
+    {
+        try
+        {
+            File.Delete(fileSettingsPath);
+            return true;
+        }
+        catch (Exception)
+        {
+            return false;
+        }
     }
 }
 

@@ -660,6 +660,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1750386608}
     m_Modifications:
+    - target: {fileID: 4722478771613590564, guid: 012279987d5db484994915d26bcd5f14, type: 3}
+      propertyPath: liquidType
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5326477383007856773, guid: 012279987d5db484994915d26bcd5f14, type: 3}
       propertyPath: m_Name
       value: PipeTripleA (5)
@@ -808,11 +812,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ffbb0bbd78a3842952372a473be7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
   liquidType: 0
-  paintMode: 
+  spriteRenderer: {fileID: 0}
   RequiredLiquidType: 1
-  liquidLayerObject: {fileID: 0}
+  requiredLiquidSign: {fileID: 0}
+  liquidLayer: {fileID: 0}
 --- !u!1001 &238769747
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -916,9 +920,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd31acb47e405154f9dbeb7abe2e9614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
   liquidType: 1
-  paintMode: 
+  spriteRenderer: {fileID: 0}
 --- !u!212 &240101189
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1498,10 +1501,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f6fe02fe8abb248b0a14e12f5a49e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
   liquidType: 0
-  paintMode: 
+  spriteRenderer: {fileID: 0}
   RequiredLiquidType: 2
+  requiredLiquidSign: {fileID: 0}
 --- !u!212 &307946097
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1761,6 +1764,10 @@ PrefabInstance:
     - target: {fileID: 633586309782991376, guid: 5080779bd971780428685f88e4209299, type: 3}
       propertyPath: m_Name
       value: PipeStraightA
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310433960357468738, guid: 5080779bd971780428685f88e4209299, type: 3}
+      propertyPath: liquidType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4974940886656014883, guid: 5080779bd971780428685f88e4209299, type: 3}
       propertyPath: m_Color.b
@@ -2439,9 +2446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd31acb47e405154f9dbeb7abe2e9614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
   liquidType: 2
-  paintMode: 
+  spriteRenderer: {fileID: 0}
 --- !u!212 &513124732
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2626,6 +2632,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1750386608}
     m_Modifications:
+    - target: {fileID: 1258872587434775980, guid: efedffc24a3f02f4c84bdcc2e9fd206b, type: 3}
+      propertyPath: liquidType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3345366225766312955, guid: efedffc24a3f02f4c84bdcc2e9fd206b, type: 3}
       propertyPath: m_Name
       value: PipeCornerA (6)
@@ -3379,8 +3389,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 620c8eaf5753e234e99086be463c069a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillSpeed: 0.1
+  spriteRenderer: {fileID: 0}
   animator: {fileID: 755588422}
+  fillSpeed: 0.1
 --- !u!212 &755588424
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3675,9 +3686,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd31acb47e405154f9dbeb7abe2e9614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
   liquidType: 1
-  paintMode: 
+  spriteRenderer: {fileID: 0}
 --- !u!212 &780101865
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3981,6 +3991,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1750386608}
     m_Modifications:
+    - target: {fileID: 1258872587434775980, guid: efedffc24a3f02f4c84bdcc2e9fd206b, type: 3}
+      propertyPath: liquidType
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3345366225766312955, guid: efedffc24a3f02f4c84bdcc2e9fd206b, type: 3}
       propertyPath: m_Name
       value: PipeCornerA (9)
@@ -4429,6 +4443,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1750386608}
     m_Modifications:
+    - target: {fileID: 4722478771613590564, guid: 012279987d5db484994915d26bcd5f14, type: 3}
+      propertyPath: liquidType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5326477383007856773, guid: 012279987d5db484994915d26bcd5f14, type: 3}
       propertyPath: m_Name
       value: PipeTripleA (3)
@@ -4722,6 +4740,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1750386608}
     m_Modifications:
+    - target: {fileID: 1258872587434775980, guid: efedffc24a3f02f4c84bdcc2e9fd206b, type: 3}
+      propertyPath: liquidType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3345366225766312955, guid: efedffc24a3f02f4c84bdcc2e9fd206b, type: 3}
       propertyPath: m_Name
       value: PipeCornerA (5)
@@ -5309,10 +5331,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f6fe02fe8abb248b0a14e12f5a49e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
   liquidType: 0
-  paintMode: 
+  spriteRenderer: {fileID: 0}
   RequiredLiquidType: 4
+  requiredLiquidSign: {fileID: 0}
 --- !u!212 &1571061304
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5561,6 +5583,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1750386608}
     m_Modifications:
+    - target: {fileID: 1258872587434775980, guid: efedffc24a3f02f4c84bdcc2e9fd206b, type: 3}
+      propertyPath: liquidType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3345366225766312955, guid: efedffc24a3f02f4c84bdcc2e9fd206b, type: 3}
       propertyPath: m_Name
       value: PipeCornerA (1)
@@ -6169,6 +6195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PipeStraightA
       objectReference: {fileID: 0}
+    - target: {fileID: 4310433960357468738, guid: 5080779bd971780428685f88e4209299, type: 3}
+      propertyPath: liquidType
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8188906699223210903, guid: 5080779bd971780428685f88e4209299, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6713,6 +6743,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PipeStraightA (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4310433960357468738, guid: 5080779bd971780428685f88e4209299, type: 3}
+      propertyPath: liquidType
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8188906699223210903, guid: 5080779bd971780428685f88e4209299, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1
@@ -7095,6 +7129,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1750386608}
     m_Modifications:
+    - target: {fileID: 4722478771613590564, guid: 012279987d5db484994915d26bcd5f14, type: 3}
+      propertyPath: liquidType
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5326477383007856773, guid: 012279987d5db484994915d26bcd5f14, type: 3}
       propertyPath: m_Name
       value: PipeTripleA (1)

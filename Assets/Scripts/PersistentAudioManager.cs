@@ -32,4 +32,9 @@ public class PersistentAudioManager : MonoBehaviour
     {
         audioSource.volume = StaticData.settings.globalVolume * StaticData.settings.musicVolume;
     }
+
+    public void UpdateVolume(float globalVolume, float musicVolume)
+    {
+        audioSource.volume = globalVolume * musicVolume;
+    }
 }

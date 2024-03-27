@@ -47,9 +47,9 @@ public class SettingsUI : MonoBehaviour
         StaticData.settings.camMoveSpeed = sliderMoveSpeed.value;
         StaticData.settings.camZoomSpeed = sliderZoomSpeed.value;
 
-        StaticData.SaveSettings();
-
         persistentAudioManager.UpdateVolume();
+
+        StaticData.SaveSettings();
     }
 
     public void LoadSettings() 
@@ -62,5 +62,13 @@ public class SettingsUI : MonoBehaviour
 
         sliderMoveSpeed.value = StaticData.settings.camMoveSpeed;
         sliderZoomSpeed.value = StaticData.settings.camZoomSpeed;
+    }
+
+    public void SliderVolumeValueChanged()
+    {
+        if (persistentAudioManager != null)
+        {
+            persistentAudioManager.UpdateVolume(sliderGlobalVolume.value, sliderMusicVolume.value);
+        }
     }
 }

@@ -10,13 +10,17 @@ public class LevelSelectionUI : MonoBehaviour
 
     private void Start()
     {
+        if (StaticData.data.levelsScore == null || StaticData.data.levelsScore.Length == 0)
+        {
+            StaticData.data.levelsScore = new int[] { 0, 0, 0, 0, 0, 0 };
+        }
         for (int i = 0; i < StaticData.data.levelsScore.Length; i++)
         {
             GameObject button = Instantiate(prefabButtonSelectLevel);
             RectTransform rectTransform = button.GetComponent<RectTransform>();
             rectTransform.SetParent(this.transform);
-
-            rectTransform.anchoredPosition = new Vector3(-300 + (i % 3) * 300, 500f - (i / 3) * 300, 0f);
+            //                                                                 500f
+            rectTransform.anchoredPosition = new Vector3(-300 + (i % 3) * 300, 400f - (i / 3) * 300, 0f);
 
             var lvl = i;
 

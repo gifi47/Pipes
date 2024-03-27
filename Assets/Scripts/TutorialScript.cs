@@ -26,6 +26,7 @@ public class TutorialScript : MonoBehaviour
 
     private bool click = false;
     private bool clickOnPipe = false;
+    private bool start = true;
 
     State nextState = State.None;
     float time = 0;
@@ -52,8 +53,7 @@ public class TutorialScript : MonoBehaviour
         switch (state)
         {
             case State.Wait:
-                if (clickOnPipe) clickOnPipe = false;
-                if (time > delay || click)
+                if (time > delay || (click && !clickOnPipe && start))
                 {
                     click = false;
                     time = 0;
@@ -166,6 +166,7 @@ public class TutorialScript : MonoBehaviour
                 break;
 
             case State.CameraZoom:
+                start = false;
                 mascotTxt.text = "Сводите и разводите два пальца, чтобы увеличивать и уменьшать масштаб";
                 circle.gameObject.SetActive(false);
                 arrow.gameObject.SetActive(false);
@@ -193,6 +194,9 @@ public class TutorialScript : MonoBehaviour
 
                 break;
         }
+
+        if (click) click = false;
+        if (clickOnPipe) clickOnPipe = false;
     }
 
     private enum State
