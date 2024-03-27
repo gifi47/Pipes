@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -195,3 +195,4 @@ public struct SettingsStruct
     public float camMoveSpeed;
     public float camZoomSpeed;
 }
+

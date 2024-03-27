@@ -1,5 +1,7 @@
+п»їusing System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 public class MainMenuManager : MonoBehaviour
@@ -69,7 +71,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void ButtonDeleteProgress()
     {
-        confirmationUI.Confirm("Удалить прогресс?", DeleteProgress);
+        confirmationUI.Confirm("РЈРґР°Р»РёС‚СЊ РїСЂРѕРіСЂРµСЃСЃ?", DeleteProgress);
     }
 
     private void DeleteProgress()
@@ -79,3 +81,4 @@ public class MainMenuManager : MonoBehaviour
         SceneLoader.LoadScene("MainMenu");
     }
 }
+

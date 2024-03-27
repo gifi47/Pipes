@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -9,3 +9,4 @@ public interface IInteractable
     Action OnInteract { get; set; }
     bool Interact();
 }
+

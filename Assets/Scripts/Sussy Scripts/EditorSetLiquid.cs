@@ -1,4 +1,4 @@
-#if UNITY_EDITOR
+﻿#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
 
@@ -39,3 +39,4 @@ public class EditorSeLiquid : EditorWindow
     }
 }
 #endif
+

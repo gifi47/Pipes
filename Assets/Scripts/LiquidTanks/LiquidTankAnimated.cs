@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,3 +32,4 @@ public class LiquidTankAnimated : LiquidTank
         this.liquidLayer.Paint(new Color(0, 0, 0, 0));
     }
 }
+

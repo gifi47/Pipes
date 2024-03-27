@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelRandom : Level
@@ -151,3 +151,4 @@ public class LevelRandom : Level
         }
     }
 }
+

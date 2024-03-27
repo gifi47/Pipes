@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -20,15 +20,15 @@ public class LevelMenuManager : MonoBehaviour
 
     public void Start()
     {
-        hud.SetLevelName($"Уровень {LevelManager.selectedLevel + 1}");
-        pauseMenu.SetLevelName($"Уровень {LevelManager.selectedLevel + 1}");
+        hud.SetLevelName($"РЈСЂРѕРІРµРЅСЊ {LevelManager.selectedLevel + 1}");
+        pauseMenu.SetLevelName($"РЈСЂРѕРІРµРЅСЊ {LevelManager.selectedLevel + 1}");
     }
 
     public void ButtonHomeClick(bool needConfirmation)
     {
         if (needConfirmation)
         {
-            confirmationMenu.Confirm("Выйти в главное меню?", Home);
+            confirmationMenu.Confirm("Р’С‹Р№С‚Рё РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ?", Home);
         }
         else
         {
@@ -54,7 +54,7 @@ public class LevelMenuManager : MonoBehaviour
     {
         if (needConfirmation)
         {
-            confirmationMenu.Confirm("Перезапустить уровень?", ReloadLevel);
+            confirmationMenu.Confirm("РџРµСЂРµР·Р°РїСѓСЃС‚РёС‚СЊ СѓСЂРѕРІРµРЅСЊ?", ReloadLevel);
         }
         else
         {
@@ -85,7 +85,8 @@ public class LevelMenuManager : MonoBehaviour
         hud.gameObject.SetActive(false);
         resultMenu.ShowStars(score);
         resultMenu.ShowParticles(score);
-        resultMenu.SetMessage(score == 0 ? "Попробуйте ещё раз" : "Уровень пройден!");
+        resultMenu.SetMessage(score == 0 ? "РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰С‘ СЂР°Р·" : "РЈСЂРѕРІРµРЅСЊ РїСЂРѕР№РґРµРЅ!");
         resultMenu.gameObject.SetActive(true);
     }
 }
+

@@ -1,4 +1,4 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -71,14 +71,14 @@ public class TutorialScript : MonoBehaviour
             case State.Start:
                 circle.gameObject.SetActive(false);
                 arrow.gameObject.SetActive(false);
-                mascotTxt.text = "Помоги наполнить бочку водой!";
+                mascotTxt.text = "РџРѕРјРѕРіРё РЅР°РїРѕР»РЅРёС‚СЊ Р±РѕС‡РєСѓ РІРѕРґРѕР№!";
                 pipeGameManager.cameraMovement = false;
                 NextState(State.ShowEndBarrel);
                 break;
 
             case State.ShowStartBarrel:
                 //circle.anchoredPosition = new Vector3();
-                mascotTxt.text = "Отсюда потечёт жидкость!";
+                mascotTxt.text = "РћС‚СЃСЋРґР° РїРѕС‚РµС‡С‘С‚ Р¶РёРґРєРѕСЃС‚СЊ!";
 
                 //circle.anchoredPosition = new Vector3(309, 162, 0);
                 circle.transform.position = new Vector3(0f, 4f, 0f);
@@ -94,7 +94,7 @@ public class TutorialScript : MonoBehaviour
                 break;
 
             case State.ShowAim:
-                mascotTxt.text = "На бочке указан требуемый тип жидкости";
+                mascotTxt.text = "РќР° Р±РѕС‡РєРµ СѓРєР°Р·Р°РЅ С‚СЂРµР±СѓРµРјС‹Р№ С‚РёРї Р¶РёРґРєРѕСЃС‚Рё";
 
                 //circle.anchoredPosition = new Vector3(309, 162, 0);
                 circle.transform.position = new Vector3(-1.16f, -4.14f, 0f);
@@ -110,7 +110,7 @@ public class TutorialScript : MonoBehaviour
                 break;
 
             case State.ShowEndBarrel:
-                mascotTxt.text = "Вот эту бочку нужно наполнить!";
+                mascotTxt.text = "Р’РѕС‚ СЌС‚Сѓ Р±РѕС‡РєСѓ РЅСѓР¶РЅРѕ РЅР°РїРѕР»РЅРёС‚СЊ!";
                 circle.gameObject.SetActive(true);
                 arrow.gameObject.SetActive(true);
 
@@ -128,7 +128,7 @@ public class TutorialScript : MonoBehaviour
                 break;
 
             case State.ShowPipes:
-                mascotTxt.text = "Нажми на трубу, чтобы повернуть её!";
+                mascotTxt.text = "РќР°Р¶РјРё РЅР° С‚СЂСѓР±Сѓ, С‡С‚РѕР±С‹ РїРѕРІРµСЂРЅСѓС‚СЊ РµС‘!";
 
                 //circle.anchoredPosition = new Vector3(540, 1344, 0);
                 circle.transform.position = new Vector3(0f, 2f, 0f);
@@ -144,7 +144,7 @@ public class TutorialScript : MonoBehaviour
                 break;
 
             case State.ShowValve:
-                mascotTxt.text = "Когда закончишь поворачивать трубы, нажми на вентиль, чтобы вода потекла!";
+                mascotTxt.text = "РљРѕРіРґР° Р·Р°РєРѕРЅС‡РёС€СЊ РїРѕРІРѕСЂР°С‡РёРІР°С‚СЊ С‚СЂСѓР±С‹, РЅР°Р¶РјРё РЅР° РІРµРЅС‚РёР»СЊ, С‡С‚РѕР±С‹ РІРѕРґР° РїРѕС‚РµРєР»Р°!";
 
                 //circle.anchoredPosition = new Vector3(309, 162, 0);
                 circle.transform.position = new Vector3(-1.47f, 4.05f, 0f);
@@ -167,7 +167,7 @@ public class TutorialScript : MonoBehaviour
 
             case State.CameraZoom:
                 start = false;
-                mascotTxt.text = "Сводите и разводите два пальца, чтобы увеличивать и уменьшать масштаб";
+                mascotTxt.text = "РЎРІРѕРґРёС‚Рµ Рё СЂР°Р·РІРѕРґРёС‚Рµ РґРІР° РїР°Р»СЊС†Р°, С‡С‚РѕР±С‹ СѓРІРµР»РёС‡РёРІР°С‚СЊ Рё СѓРјРµРЅСЊС€Р°С‚СЊ РјР°СЃС€С‚Р°Р±";
                 circle.gameObject.SetActive(false);
                 arrow.gameObject.SetActive(false);
                 pipeGameManager.cameraMovement = true;
@@ -176,7 +176,7 @@ public class TutorialScript : MonoBehaviour
                 break;
 
             case State.CameraMovement:
-                mascotTxt.text = "Для передвежения камеры двигайте одним пальцем по экрану";
+                mascotTxt.text = "Р”Р»СЏ РїРµСЂРµРґРІРµР¶РµРЅРёСЏ РєР°РјРµСЂС‹ РґРІРёРіР°Р№С‚Рµ РѕРґРЅРёРј РїР°Р»СЊС†РµРј РїРѕ СЌРєСЂР°РЅСѓ";
 
                 NextState(State.EndOfTutorial);
                 break;
@@ -238,3 +238,4 @@ public class TutorialScript : MonoBehaviour
         state = State.Wait;
     }
 }
+
